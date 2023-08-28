@@ -1,0 +1,22 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model CategoryListViewModel
+
+
+
+<div class="categories">
+    <div class="category-title">
+        <i class="fa-solid fa-circle-play"></i> Türe Göre Filmler
+    </div>
+    <div class="category-links">
+        <ul style="display:flex ;">
+            @foreach (var item in Model.Categories)
+            {
+            <li><a href="/Movie/Movies?category=@item.CategoryId" class="">@item.CategoryName</a></li>
+                    
+            }
+            
+        </ul>
+    </div>
+</div>

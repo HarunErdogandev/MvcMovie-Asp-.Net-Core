@@ -1,0 +1,70 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = null;
+}
+@{
+    string errorMessage = ViewBag.ErrorMessage;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-16">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="~/css/login.css" rel="stylesheet" />
+</head>
+<body>
+    @if (!string.IsNullOrEmpty(errorMessage))
+    {
+        <div class="alert alert-danger" role="alert">
+            @errorMessage
+        </div>
+    }
+    <section id="Main">
+       
+        <div class="login-box">
+            <div class="logo">
+                <img class="login-logo" src="~/İmages/user.png" alt="">
+
+                <div class="message" style="color:rgba(255, 255, 255, 0.836) ; font-size: 24px;">
+                    Login
+                </div>
+                
+            </div>
+            <form method="post" action="Login">
+                
+                <div class="txt txt1">
+                    <label for="Text">Kullanıcı Adı</label>
+                    <input type="text" name="UserName" id="Text">
+                </div>
+                <div class="txt txt2">
+                    <label for="password">Şifre</label>
+                    <input type="password" name="Password" id="password">
+                </div>
+                <div class="buttons">
+                    <button class="btn-login" type="submit">Login</button>
+                    
+                </div>
+                
+            </form>
+            
+        </div>
+
+    </section>
+    
+       
+    @if (!string.IsNullOrEmpty(errorMessage))
+    {
+        <script >
+            console.log('@errorMessage');
+        </script>
+    }
+
+   
+</body>
+</html>

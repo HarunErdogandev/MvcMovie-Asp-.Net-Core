@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.Container{
+    display: flex;
+}
+.Container .AdminPanel{
+    width: 25%;
+    height: 100vh;
+    background-color: #1d2124;
+}
+.AdminPanel .Logo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Logo .images
+{
+    width: 50%;
+} 
+
+.images img
+{
+    width: 100%;
+}
+
+.Logo .title
+{
+    color: white;
+    font-size: 1.5rem;
+}
+.Links ul li a{
+    display: inline-block;
+    padding: 26px;
+    width: 100%;
+    color: white;
+    text-decoration: none;
+}
+
+.Links li a:hover{
+    background-color: white;
+    color: #1d2124;
+}
+
+.Container .Content
+{
+    width: 100%;
+}

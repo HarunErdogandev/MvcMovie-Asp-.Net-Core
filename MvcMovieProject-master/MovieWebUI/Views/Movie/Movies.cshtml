@@ -1,0 +1,71 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model MovieListViewModel
+
+
+
+<section id="container">
+    <div class="movie-content flex-grid">
+        @await Component.InvokeAsync("CategoryList")
+        <div class="movies">
+ 
+            <div class="movie-card">
+                <div class="heading">
+                    <div class="multi alt ">
+
+                        <i class="fa-solid fa-video"></i><span style="color: #6edfc1;"> Filmler</span>
+                    </div>
+
+                    <div class="Row">
+
+                        @{
+                            if (Model.Movies.Success)
+                            {
+                                foreach (var item in Model.Movies.Data)
+                                {
+                                    <div class="card">
+                                        <a href="/Movie/Detail?detail=@item.MovieId">
+                                            <img src="~/İmages/@item.Movieİmage" />
+                                            <div class="overlay">
+                                                <div class="play">
+
+                                                    <i class="fa-solid fa-circle-play"></i>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                foreach (var item in Model.MovieGenres.Data)
+                                {
+                                    <div class="card">
+                                        <a href="/Movie/Detail?detail=@item.MovieId">
+                                            <img src="~/İmages/@item.imgUrl" />
+                                            <div class="overlay">
+                                                <div class="play">
+
+                                                    <i class="fa-solid fa-circle-play"></i>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                }
+                            }
+
+                            
+
+                        }
+
+                      
+
+                       
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

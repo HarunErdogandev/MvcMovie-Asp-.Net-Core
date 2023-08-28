@@ -1,0 +1,85 @@
+﻿
+@model MovieListViewModel
+
+
+
+
+<section id="container">
+    <div class="movie-content flex-grid">
+        @await Component.InvokeAsync("CategoryList")
+        <div class="movies">
+            <section style="display: flex; justify-content:center">
+                <section class="Container">
+
+                    <Div class="heading">
+                        <div class="multi">
+                            <i class="fa-solid fa-display"></i><span style="color: #6edfc1;"> Trend Filmler</span>
+                        </div>
+
+                    </Div>
+ 
+                    <div class="top-content">
+                        
+                        @foreach (var item in Model.RandomMovies.Data)
+                        {                            
+                            var a = item.MovieId;
+                            if (a==Model.RandomMovies.Data[0].MovieId)
+                            {
+                                <div class="box box-0" style="  background-image: url('../İmages/@item.Movieİmage')">
+                                    <a href="/Movie/Detail?detail=@item.MovieId"><button style="cursor:pointer ;">İzle</button></a>
+                                    <div class="MovieName">
+                                        @item.MovieTitle
+                                    </div>
+                                </div>
+                            }
+                            if (a == Model.RandomMovies.Data[1].MovieId)
+                            {
+                                <div class="box box-1" style="background-image:url('../İmages/@item.Movieİmage')">
+                                    <a href="/Movie/Detail?detail=@item.MovieId"><button style="cursor:pointer ;">İzle</button></a>
+                                    <div class="MovieName">
+                                        @item.MovieTitle
+                                    </div>
+                                </div>
+                            }
+                            
+                        }                                              
+                    </div>
+                </section>
+            </section>
+            <div class="movie-card">
+                <div class="heading">
+                    <div class="multi alt ">
+
+                        <i class="fa-solid fa-video"></i><span style="color: #6edfc1;"> Filmler</span>
+                    </div>
+
+                    <div class="Row">
+                       
+                         
+                          
+                            @foreach (var item in Model.Movies.Data)
+                            {
+                                <div class="card">
+                                    <a href="/Movie/Detail?detail=@item.MovieId">
+                                        <img src="~/İmages/@item.Movieİmage" />
+                                        <div class="overlay">
+                                            <div class="play">
+
+                                                <i class="fa-solid fa-circle-play"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            }
+                        
+                        
+                       
+                        
+                        
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

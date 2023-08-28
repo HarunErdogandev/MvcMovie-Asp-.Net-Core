@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* Login Kısmı */
+body {
+    
+    background-image: url('../İmages/1.svg');
+}
+
+#Main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-box{
+    width: 400px;
+    background-color: #00000054;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+.logo{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+.login-logo{
+    width: 100%;
+}
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+.txt{
+    
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    
+}
+.txt label{
+    display: block;
+    
+}
+.txt input{
+    width: 100%;
+    padding: 5px;
+    border: 2px solid goldenrod;
+    border-radius: 5px;
+}
+.txt input:focus{
+    outline: none;
+    border: 1px solid blue;
+}
+
+.buttons{
+    margin-top: 20px;
+    display: flex;
+    width: 75%;
+    margin-bottom: 50px;
+}
+button{
+    padding: 10px;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid goldenrod;
+    cursor: pointer;
+    width:100%
+    
+}
+.btn-forgot{
+    margin-left: 10px;
+}
+button:hover{
+    color: black;
+    background-color: white;
+}
+
+
+
+
+
+
+
+/* @media(max-width:768px){
+    .login-box{
+        width: 75%;
+    }
+} */

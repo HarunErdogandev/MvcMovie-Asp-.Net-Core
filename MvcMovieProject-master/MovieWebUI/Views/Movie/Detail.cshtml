@@ -1,0 +1,70 @@
+﻿@using Entities.Concrate;
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model MovieDetailListView
+
+
+
+
+
+<Section id="Details">
+    <div class="container">
+         
+        <div class="watch"> 
+            
+            <div class="Title"> 
+                        @Model.GetMovie.Data.MovieTitle
+                 </div>
+            
+            <video controls="controls">
+                <source src="~/videos/@Model.GetMovie.Data.VideoUrl " type="video/mp4" />
+            </video>
+        </div>
+    
+    <div class="MovieDetails">
+        <div class="poster">
+                <img src="~/İmages/@Model.GetMovie.Data.Movieİmage " alt="" srcset="">
+        </div>
+        
+        <div class="decriptions">
+            <div class="content">
+                <div class="title">Filmin Konusu</div>
+                <div class="desc">
+                        @Model.GetMovie.Data.MovieDescription
+                </div>
+                    <div class="cast">
+                        Yönetmen:
+
+
+                        <span>@Model.Directors.Data.DirectoryName</span>
+
+                    </div>
+                        <div style="color: rgb(207, 90, 90); font-size:2rem" class="category">
+                       Kategoriler:@foreach (var item in Model.MovieCategories.Data)
+                            {
+                                <a style="font-size: 1rem;
+                                          text-decoration: none;
+                                          color: white;
+                                          padding: 9px;
+                                          margin: 9px;
+                                          background-color: indianred;
+                                          border-radius: 7px" href="">
+                                    @item.CategoryName
+                                </a>
+                            }
+                        
+                    </div>
+
+                <div class="cast">
+                    Oyuncular:
+                    @foreach (var item in Model.Actors.Data)
+                            {
+                                <span>@item.ActorName,</span>
+                            }
+                </div>
+                    
+            </div>
+        </div>
+    </div>
+</Section>

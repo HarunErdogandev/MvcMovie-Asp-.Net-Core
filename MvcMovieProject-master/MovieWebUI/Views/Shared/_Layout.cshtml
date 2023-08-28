@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MovieWebUI</title>
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/MovieWebUI.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+          integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="Content">
+            <div class="Brand-name">
+                <i style="color: beige; margin-right: 5px;" class="fa-solid fa-film"></i>Free<span style="color: white;">Vee</span>
+            </div>
+            <form action="/Movie/Movies">
+                <div class="Search-bar">
+                    <a href=""><button type="button"><i class="fa-solid fa-magnifying-glass"></i></button></a><input type="text" placeholder="Film Ara" name="Search">
+                </div>
+            </form>
+
+            <div class="Navbar-links">
+
+                <ul>
+                    <li><a href="@Url.Action("Index","Movie")"><i id="Home" class="fa-solid fa-house"></i></a></li>
+                    <li><a href="@Url.Action("Login","AdminLogin")"><i class="fa-regular fa-user"></i></a></li>
+                    <li><a href="@Url.Action("Index","About")"><i class="fa-regular fa-address-book"></i></a></li>
+                    <li><a href="@Url.Action("Index","Contact")"><i class="fa-solid fa-phone"></i></a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="">
+        <main role="main" class="">
+            
+            @RenderBody()
+        </main>
+    </div>
+
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
